@@ -24,10 +24,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# intellij
-.idea
-.idea/*
-
 # BACK-END
 HELP.md
 target/
