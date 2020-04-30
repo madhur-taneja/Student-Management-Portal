@@ -7,6 +7,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 import com.tektraining.loginmodule.models.User;
 import com.tektraining.loginmodule.repository.UserRepository;
 
@@ -22,6 +24,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
 
         return UserDetailsImpl.build(user);
+    }
+
+    public void deleteUser(String id) {
+        Optional<User> user = userRepository.findById(id);
+        if(user.isPresent()){
+            userRepository.deleteById(id);
+            System.out.println("User Deleted");
+        }else{
+            System.out.println("User Not found");
+        }
     }
 
 }
