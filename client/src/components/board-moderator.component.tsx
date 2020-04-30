@@ -12,7 +12,7 @@ export default class BoardModerator extends Component<any, any> {
   }
 
   componentDidMount() {
-    UserService.getUserBoard().then(
+    UserService.getModeratorBoard().then(
       response => {
         this.setState({
           content: response.data
