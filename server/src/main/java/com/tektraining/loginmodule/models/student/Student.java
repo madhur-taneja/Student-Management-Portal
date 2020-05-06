@@ -3,19 +3,23 @@ package com.tektraining.loginmodule.models.student;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.tektraining.loginmodule.models.user.User;
+// import com.tektraining.loginmodule.models.user.User;
 
+// import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "student-details")
 public class Student {
 
-    private User user;
+    // @DBRef(db="users")
+    // private User user;
 
     @Id
     private String id;
 
+    @Indexed(unique=true)
     private String studentId;
 
     @NotBlank
@@ -30,26 +34,12 @@ public class Student {
 
     }
 
-    public Student(final User user, @NotBlank @Size(max = 20) final String name, final Contact contactDetails,
+    public Student(final String studentId, @NotBlank @Size(max = 20) final String name, final Contact contactDetails,
             final Course courseDetails) {
-        this.setstudentId(user.getId());
+        this.setstudentId(studentId);
         this.setName(name);
         this.setContactDetails(contactDetails);
         this.setCourseDetails(courseDetails);
-    }
-
-    /**
-     * @return User return the user
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * @param user the user to set
-     */
-    public void setUser(final User user) {
-        this.user = user;
     }
 
     /**
