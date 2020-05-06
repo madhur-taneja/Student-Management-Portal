@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-import com.tektraining.loginmodule.models.User;
+import com.tektraining.loginmodule.models.user.User;
 import com.tektraining.loginmodule.repository.UserRepository;
 
 @Service

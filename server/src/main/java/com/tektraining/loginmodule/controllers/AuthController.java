@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tektraining.loginmodule.models.ERole;
-import com.tektraining.loginmodule.models.Role;
-import com.tektraining.loginmodule.models.User;
+import com.tektraining.loginmodule.models.user.ERole;
+import com.tektraining.loginmodule.models.user.Role;
+import com.tektraining.loginmodule.models.user.User;
 import com.tektraining.loginmodule.payload.request.LoginRequest;
 import com.tektraining.loginmodule.payload.request.SignupRequest;
 import com.tektraining.loginmodule.payload.response.JwtResponse;

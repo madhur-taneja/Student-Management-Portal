@@ -21,15 +21,15 @@ public class UserController {
     @Autowired
     UserDetailsServiceImpl userDetailsServiceImpl;
 
-    @GetMapping()
-    @PreAuthorize("hasRole('STUDENT') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    public String userAccess() {
-        return "User Content.";
-    }
-
     @GetMapping("/all")
     public String allAccess() {
         return "Public Content.";
+    }
+
+    @GetMapping("/info")
+    @PreAuthorize("hasRole('STUDENT') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    public String userAccess() {
+        return "Student Content.";
     }
 
     @GetMapping("/mod")
