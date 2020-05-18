@@ -12,6 +12,7 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
+import SettingsStudent from "./components/settings-student.component";
 
 class App extends Component<any, any> {
   constructor(props: any) {
@@ -122,6 +123,8 @@ class App extends Component<any, any> {
               <Route path="/user" component={BoardUser} />
               <Route path="/mod" component={BoardModerator} />
               <Route path="/admin" component={BoardAdmin} />
+
+              <Route path="/settings" component={SettingsStudent} />
             </Switch>
           </div>
         </div>
